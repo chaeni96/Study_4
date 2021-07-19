@@ -37,9 +37,24 @@ public class ClassStudy_2 {
 		students [i] =student;
 		
 		}
-		System.out.println("이름\t번호\t국어\t영어\t수학\t총점\t평균");
-		System.out.println("====================================================");
-		for(int i = 0;i<students.length;i++) {
+		//1. 전체 정보 출력
+		//2. 학생 번호 검색
+		//3. 학생 정보 추가 - 학생 한명을 배열에 추가
+		//4. 성적 순서 출력
+		//5. 프로그램 종료
+	
+	boolean flag =true;
+	while(flag) {
+		System.out.println("번호를 입력해주세요 - 1.전체 정보 출력 2.학생 번호 검색 3.학생 정보 추가 4.성적 순서 출력 5.프로그램 종료");
+		int select = sc.nextInt();
+		
+		switch(select) {
+		
+		case 1: 
+			System.out.println("이름\t번호\t국어\t영어\t수학\t총점\t평균");
+			System.out.println("====================================================");
+		
+			for(int i = 0;i<students.length;i++) {
 			System.out.print(students[i].name+"\t");
 			System.out.print(students[i].num+"\t");
 			System.out.print(students[i].kor+"\t");
@@ -49,19 +64,51 @@ public class ClassStudy_2 {
 			System.out.println(students[i].avg);
 			System.out.println("------------------------------------------------");
 			
-		}
+			flag =!flag;
+			
+			}
+			break;
+			
+		case 2: System.out.println("검색할 번호를 입력해주세요");
+			int selectnum = sc.nextInt();
+			
+			boolean check = false;
+			if(check) {
+				for(int i=0; i<students.length;i++) {
+					if(selectnum == students[i].num) {
+						System.out.println("이름\t번호\t국어\t영어\t수학\t총점\t평균");
+						System.out.println("====================================================");
+					
+						for(int j = 0;j<students.length;j++) {
+						System.out.print(students[selectnum].name+"\t");
+						System.out.print(students[selectnum].num+"\t");
+						System.out.print(students[selectnum].kor+"\t");
+						System.out.print(students[selectnum].eng+"\t");
+						System.out.print(students[selectnum].math+"\t");
+						System.out.print(students[selectnum].total+"\t");
+						System.out.println(students[selectnum].avg);
+						System.out.println("------------------------------------------------");	
+						}
+						
+						
+							
+						}else {
+							System.out.println("정보가 없습니다");
+						}
 	
+					
+					
+				}
 	
-	//학생의 수 만큼 정보를 입력- 이름, 번호, 국어, 영어, 수학
-	//총점 평균
+			
+		
+			}	
+		
 	
+	}
 	
-	
-	//모든 학생의 정보 출력
-	
-	
-	
+	}
 	System.out.println("Study2 Finish");
 	}
-
 }
+
